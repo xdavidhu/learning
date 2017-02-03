@@ -1,2 +1,0 @@
-# learning
-My learning projects
