@@ -20,8 +20,8 @@ from shortener.views import shortener_redirect_view, shortenerCBView
 
 urlpatterns = [
     url(r'^new-admin/', admin.site.urls),
-    url(r'^a/(?P<shortcode>[\w]+)/$', shortener_redirect_view),
-    url(r'^b/(?P<shortcode>[\w]+)/$', shortenerCBView.as_view()),
+    url(r'^(?P<shortcode>[\w-]{6,15})/$', shortener_redirect_view),
+    url(r'^b/(?P<shortcode>[\w-]{6,15})/$', shortenerCBView.as_view()),
 ]
 
 SHORTCODE_MAX = 15

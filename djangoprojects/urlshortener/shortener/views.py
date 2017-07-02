@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.http import HttpResponse
 from django.views import View
 
@@ -19,7 +19,7 @@ def shortener_redirect_view(request, shortcode=None, *args, **kwargs):
     #     obj = qs.first()
     #     obj_url = obj.url
 
-    return HttpResponse("hello " + str(obj.url))
+    return HttpResponseRedirect(obj.url)
 
 class shortenerCBView(View):
     def get(self, request, shortcode=None, *args, **kwargs):
